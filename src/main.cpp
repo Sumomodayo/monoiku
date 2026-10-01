@@ -1,11 +1,15 @@
 #include <Arduino.h>
 
-// A  B  C  D  E  F  G
-int segPins[] = {
-12, 14, 27, 26, 25, 33, 32
+int segPins1[] = {
+18, 19, 33, 25, 26, 5, 17
+};
+
+int segPins2[] = {
+0, 4, 27, 14, 12, 2, 15
 };
 
 int numbers[10][7] = {
+
 {1, 1, 1, 1, 1, 1, 0}, // 0
 {0, 1, 1, 0, 0, 0, 0}, // 1
 {1, 1, 0, 1, 1, 0, 1}, // 2
@@ -16,36 +20,48 @@ int numbers[10][7] = {
 {1, 1, 1, 0, 0, 0, 0}, // 7
 {1, 1, 1, 1, 1, 1, 1}, // 8
 {1, 1, 1, 1, 0, 1, 1}  // 9
+
 };
 
-void showNumber(int num);
+void showNumber(int num, int segPins[]) {
+
+for (int i = 0; i < 7; i++) {
+
+digitalWrite(segPins[i], numbers[num][i]);
+
+}
+
+}
 
 void setup() {
 
 for (int i = 0; i < 7; i++) {
-pinMode(segPins[i], OUTPUT);
+
+pinMode(segPins1[i], OUTPUT);
+
+}
+
+for (int i = 0; i < 7; i++) {
+
+pinMode(segPins2[i], OUTPUT);
+
 }
 
 }
 
 void loop() {
 
-for (int num = 1; num <= 9; num++) {
+for (int num = 1; num <= 99; num++) {
 
+int tens = num / 10;
 
-showNumber(num);
+int ones = num % 10;
+
+showNumber(tens, segPins2);
+
+showNumber(ones, segPins1);
 
 delay(1000);
-
-}
-
-}
-
-void showNumber(int num) {
-
-for (int i = 0; i < 7; i++) {
-
-digitalWrite(segPins[i], numbers[num][i]);
 
 }
 
