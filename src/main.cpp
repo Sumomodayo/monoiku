@@ -18,7 +18,7 @@ const int SWITCH_PIN = 32;
 //      ---
 //       D
 //
-// A B C D E F G
+// TODO:icチップ版の配線作る。ログを作る
 
 const int segPins1[7] = {
     18,  // A
@@ -120,11 +120,6 @@ void setup()
 
     delay(1000);
 
-    Serial.println();
-    Serial.println("================================");
-    Serial.println("ESP32 DHT22 Temperature/Humidity");
-    Serial.println("================================");
-
     for (int i = 0; i < 7; i++)
     {
         pinMode(segPins1[i], OUTPUT);
@@ -143,10 +138,10 @@ void setup()
 
     showTwoDigits(0);
 
-    Serial.println("DHT22 started.");
+    Serial.println("温湿度計スタート");
     Serial.println("Switch:");
-    Serial.println("  HIGH = Temperature");
-    Serial.println("  LOW  = Humidity");
+    Serial.println("  HIGH = 温度");
+    Serial.println("  LOW  = 湿度");
     Serial.println();
 }
 
@@ -165,21 +160,15 @@ void loop()
 
         temperature = dht.readTemperature();
         humidity = dht.readHumidity();
-
+        //ログ表示
         if (isnan(temperature) || isnan(humidity))
         {
-            Serial.println("DHT22 read error.");
+            Serial.println("error.");
         }
         else
         {
-            Serial.print("Temperature: ");
-            Serial.print(temperature);
-            Serial.println(" °C");
-
-            Serial.print("Humidity: ");
-            Serial.print(humidity);
-            Serial.println(" %");
-
+            Serial.printf("温度: %.1f °C\n", temperature);
+            Serial.printf("湿度: %.1f %%\n", humidity);
             Serial.println();
         }
     }
