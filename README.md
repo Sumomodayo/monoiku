@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 
-# ❌ や り な お し ! ! !
+# ⭕ 動 く ぞ ! ! !
 
 </div>
 <br />
