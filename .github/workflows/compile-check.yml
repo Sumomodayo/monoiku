@@ -11,13 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Building test in GCC / G++
+      # 1. Arduino CLI のセットアップ
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 2. ESP32 ボードインデックスの追加とインストール
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      # 3. コンパイルチェック
+      - name: Building test (PlatformIO)
         id: build
         continue-on-error: true
-        run: |
-          find . -type f -name '*.c' | xargs -r -t -L 1 gcc -fsyntax-only
-          find . -type f \( -name '*.cpp' -o -name '*.cc' \) | xargs -r -t -L 1 g++ -fsyntax-only
+        run: pio run
 
+      # 4. 成功時の README 更新
       - name: Update README on Success
         if: steps.build.outcome == 'success'
         run: |
@@ -33,6 +43,7 @@ jobs:
           <br />
           EOF
 
+      # 5. 失敗時の README 更新
       - name: Update README on Failure
         if: steps.build.outcome == 'failure'
         run: |
@@ -48,6 +59,7 @@ jobs:
           <br />
           EOF
 
+      # 6. コミット & プッシュ
       - name: Commit and Push README
         run: |
           git config user.name "github-actions[bot]"
@@ -55,6 +67,7 @@ jobs:
           git add README.md
           git diff --staged --quiet || (git commit -m "docs: update README build status" && git push)
 
+      # 7. ビルド失敗時はワークフロー自体も Fail にさせる
       - name: Fail job if build failed
         if: steps.build.outcome == 'failure'
         run: exit 1
