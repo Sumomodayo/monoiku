@@ -7,7 +7,7 @@ const int DHT_PIN = 21;
 
 DHT dht(DHT_PIN, DHT_TYPE);
 
-const int SWITCH_PIN = 32;
+const int SWITCH_PIN = 34;
 
 //
 //       A
@@ -18,26 +18,25 @@ const int SWITCH_PIN = 32;
 //      ---
 //       D
 //
-// TODO:icチップ版の配線作る。ログを作る
 
 const int segPins1[7] = {
-    18,  // A
-    19,  // B
-    33,  // C
-    25,  // D
-    26,  // E
-    5,   // F
-    17   // G
+    4,  // A
+    16,  // B
+    17,  // C
+    18,  // D
+    19,  // E
+    22,   // F
+    23   // G
 };
 
 const int segPins2[7] = {
-    0,   // A
-    4,   // B
+    32,   // A
+    35,   // B
     27,  // C
     14,  // D
-    12,  // E
-    2,   // F
-    15   // G
+    13,  // E
+    25,   // F
+    26   // G
 };
 
 const int numbers[10][7] = {
