@@ -18,6 +18,9 @@ const int SWITCH_PIN = 34;
 //      ---
 //       D
 //
+//g f gnd a b
+//
+//e d gnd c dp
 
 const int segPins1[7] = {
     4,  // A
