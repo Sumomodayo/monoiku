@@ -19,7 +19,7 @@ const int SWITCH_PIN = 34;
 //       D
 
 
-const int segPins1[7] = {
+const int segPins2[7] = {
     4,  // A
     16,  // B
     17,  // C
@@ -29,7 +29,7 @@ const int segPins1[7] = {
     23   // G
 };
 
-const int segPins2[7] = {
+const int segPins1[7] = {
     32,   // A
     33,   // B
     27,  // C
@@ -173,25 +173,21 @@ void loop()
     }
 
     int switchState = digitalRead(SWITCH_PIN);
+    float value = (switchState == HIGH) ? temperature : humidity;
 
-    // 温度表示
-    if (isnan(temperature))
+    if (isnan(value))
     {
         showTwoDigits(0);
     }
     else
     {
-        int tempValue = round(temperature);
+        int displayValue = round(value);
 
-        // 0～99だけ表示
-        if (tempValue >= 0 && tempValue <= 99)
-        {
-            showTwoDigits(tempValue);
-        }
-        else
-        {
-            showTwoDigits(0);
-        }
+        // 2桁に収める（湿度100%は99で表示）
+        if (displayValue < 0)  displayValue = 0;
+        if (displayValue > 99) displayValue = 99;
+
+        showTwoDigits(displayValue);
     }
 
     delay(50);
