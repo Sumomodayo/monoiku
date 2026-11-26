@@ -34,8 +34,8 @@ const int segPins1[7] = {
 
 const int segPins2[7] = {
     32,   // A
-    35,   // B
-    27,  // C
+    33,   // B
+27,  // C
     14,  // D
     13,  // E
     25,   // F
@@ -82,7 +82,7 @@ void clearDisplay(const int pins[7])
 {
     for (int i = 0; i < 7; i++)
     {
-        digitalWrite(pins[i], LOW);
+        digitalWrite(pins[i], HIGH);
     }
 }
 
@@ -125,13 +125,13 @@ void setup()
     for (int i = 0; i < 7; i++)
     {
         pinMode(segPins1[i], OUTPUT);
-        digitalWrite(segPins1[i], LOW);
+        digitalWrite(segPins1[i], HIGH);
     }
 
     for (int i = 0; i < 7; i++)
     {
         pinMode(segPins2[i], OUTPUT);
-        digitalWrite(segPins2[i], LOW);
+        digitalWrite(segPins2[i], HIGH);
     }
 
     pinMode(SWITCH_PIN, INPUT_PULLUP);
