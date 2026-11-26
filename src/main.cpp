@@ -99,6 +99,15 @@ void showNumber(int number, const int pins[7])
 
 void showTwoDigits(int value)
 {
+    if (value < 0 && value >= -9)
+    {
+        for (int i = 0; i < 7; i++)
+            digitalWrite(segPins2[i], i == 6 ? HIGH : LOW);
+
+        showNumber(-value, segPins1);
+        return;
+    }
+
     if (value < 0 || value > 99)
     {
         value = 0;
@@ -108,7 +117,6 @@ void showTwoDigits(int value)
     int ones = value % 10;
 
     showNumber(tens, segPins2);
-
     showNumber(ones, segPins1);
 }
 
@@ -183,8 +191,9 @@ void loop()
     {
         int tempValue = round(temperature);
 
-        // 0～99だけ表示
-        if (tempValue >= 0 && tempValue <= 99)
+        // 0～99だけ表示 
+        // -表記対応
+        if (tempValue >= -9 && tempValue <= 99)
         {
             showTwoDigits(tempValue);
         }
