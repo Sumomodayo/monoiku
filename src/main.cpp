@@ -147,7 +147,6 @@ void setup()
 void loop()
 {
     static unsigned long lastReadTime = 0;
-
     static float temperature = NAN;
     static float humidity = NAN;
 
@@ -159,7 +158,8 @@ void loop()
 
         temperature = dht.readTemperature();
         humidity = dht.readHumidity();
-        //ログ表示
+
+        // ログ表示
         if (isnan(temperature) || isnan(humidity))
         {
             Serial.println("error.");
@@ -175,50 +175,22 @@ void loop()
     int switchState = digitalRead(SWITCH_PIN);
 
     // 温度表示
-
-    if (switchState == HIGH)
+    if (isnan(temperature))
     {
-        if (isnan(temperature))
-        {
-            showTwoDigits(0);
-        }
-        else
-        {
-            int tempValue = round(temperature);
-
-            // 0～99だけ表示
-            if (tempValue >= 0 && tempValue <= 99)
-            {
-                showTwoDigits(tempValue);
-            }
-            else
-            {
-                showTwoDigits(0);
-            }
-        }
+        showTwoDigits(0);
     }
-
-    // 湿度表示
-
     else
     {
-        if (isnan(humidity))
+        int tempValue = round(temperature);
+
+        // 0～99だけ表示
+        if (tempValue >= 0 && tempValue <= 99)
         {
-            showTwoDigits(0);
+            showTwoDigits(tempValue);
         }
         else
         {
-            int humidityValue = round(humidity);
-
-            // 0～99だけ表示
-            if (humidityValue >= 0 && humidityValue <= 99)
-            {
-                showTwoDigits(humidityValue);
-            }
-            else
-            {
-                showTwoDigits(0);
-            }
+            showTwoDigits(0);
         }
     }
 

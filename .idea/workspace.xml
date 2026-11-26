@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd56bb7-4009-4932-b7f6-f881eb52c69f" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="ffd56bb7-4009-4932-b7f6-f881eb52c69f" name="変更" comment="FIX" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +26,65 @@
     &quot;accountId&quot;: &quot;e2c268aa-4260-46b2-a7bc-85653ed2dcd8&quot;
   }
 }</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000626578620286" />
+      <entry key="S2" value="1.2060840901030327" />
+      <entry key="S5" value="1.8442966780056276" />
+      <entry key="S10" value="2.5991706825668173" />
+      <entry key="S30" value="3.825261386865948" />
+      <entry key="S60" value="4.342198117180498" />
+      <entry key="M2" value="4.650920580443838" />
+      <entry key="M5" value="4.855149924883638" />
+      <entry key="M10" value="4.926671782358545" />
+      <entry key="M15" value="4.950911254132066" />
+      <entry key="M30" value="4.975353345033856" />
+      <entry key="H1" value="4.987650979680076" />
+      <entry key="H2" value="4.993819051271936" />
+      <entry key="H4" value="4.996907914069828" />
+      <entry key="D1" value="4.999484428352831" />
+      <entry key="W1" value="4.999926341419892" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9526379980439373" />
+      <entry key="MS500" value="0.9909614898791421" />
+      <entry key="S2" value="1.2025582805296504" />
+      <entry key="S5" value="1.8404199176871712" />
+      <entry key="S10" value="2.593925679238799" />
+      <entry key="S30" value="3.8204999516532094" />
+      <entry key="S60" value="4.33903662681664" />
+      <entry key="M2" value="4.649092065488764" />
+      <entry key="M5" value="4.854350874514542" />
+      <entry key="M10" value="4.926260230936945" />
+      <entry key="M15" value="4.950634155587105" />
+      <entry key="M30" value="4.975213415416175" />
+      <entry key="H1" value="4.987580666969099" />
+      <entry key="H2" value="4.993783807586655" />
+      <entry key="H4" value="4.996890270350313" />
+      <entry key="D1" value="4.999481484690679" />
+      <entry key="W1" value="4.999925920822175" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3,
   &quot;fromUser&quot;: false
@@ -37,22 +94,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/kazut/file/C/monoiku",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kazut/file/C/monoiku&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,6 +125,15 @@
       <option name="presentableId" value="Default" />
       <updated>1795607032695</updated>
     </task>
+    <task id="LOCAL-00001" summary="FIX">
+      <option name="closed" value="true" />
+      <created>1795673875762</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1795673875762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,5 +149,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FIX" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX" />
   </component>
 </project>
